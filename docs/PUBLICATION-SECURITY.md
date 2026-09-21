@@ -19,7 +19,7 @@ It does not delete files, rewrite history, commit, push, change repository visib
 Clone/update the repository on the Mac that contains the full Git history:
 
 ```bash
-cd ~/Homely
+cd ~/scripts/Homely
 git pull
 
 chmod +x scripts/publication-audit.sh
