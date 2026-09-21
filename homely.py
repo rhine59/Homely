@@ -917,9 +917,7 @@ def send_activity_email(
     recipients = email_recipients(config)
 
     now = datetime.now().astimezone()
-    subject = (
-        f"Homely DHW - {status} - "
-    )
+    subject = f"{config.profile} Homely / Sunamp Hot water schedule"
 
     escaped_report = html.escape(report_text)
 
