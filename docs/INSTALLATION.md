@@ -5,7 +5,7 @@
 The Homely repository is intended to be cloned as:
 
 ```text
-/Users/richardhine/Homely
+/Users/richardhine/scripts/Homely
 ```
 
 The supplied LaunchAgent is configured for this location and for the existing pyenv interpreter:
@@ -173,7 +173,7 @@ It runs:
 
 ```text
 /Users/richardhine/.pyenv/versions/octopus/bin/python
-/Users/richardhine/Homely/homely.py
+/Users/richardhine/scripts/Homely/homely.py
 --all-profiles
 ```
 
@@ -182,7 +182,7 @@ at **23:00 each day**.
 The working directory is:
 
 ```text
-/Users/richardhine/Homely
+/Users/richardhine/scripts/Homely
 ```
 
 and logs are written there as:
@@ -260,8 +260,8 @@ Check the absolute paths in the plist first. Then run exactly the command specif
 Also inspect:
 
 ```bash
-tail -100 ~/Homely/homely.log
-tail -100 ~/Homely/homely.err
+tail -100 ~/scripts/Homely/homely.log
+tail -100 ~/scripts/Homely/homely.err
 ```
 
 ### Repository was moved
