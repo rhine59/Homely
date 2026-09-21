@@ -12,6 +12,8 @@ The current production program is `homely.py`. It supports multiple household pr
 
 **[API Reference](docs/API-REFERENCE.md)** — all Homely API calls discovered and used by the project, request examples, likely response structures, OAuth flow, customer methods, plus the Octopus Agile and Open-Meteo calls used by the scheduler.
 
+**[Public Release and Security Audit](docs/PUBLICATION-SECURITY.md)** — checks to perform before making the repository public, including full Git-history secret scanning with the supplied `scripts/publication-audit.sh` tool.
+
 ## Main files
 
 - `homely.py` — current production scheduler.
