@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-
 <plist version="1.0">
 <dict>
-
     <key>Label</key>
     <string>com.richard.homely</string>
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/richardhine/.pyenv/versions/octopus/bin/python3</string>
-        <string>/Users/richardhine/scripts/Octopus/homely/homely.py</string>
+        <string>/Users/richardhine/.pyenv/versions/octopus/bin/python</string>
+        <string>/Users/richardhine/Homely/homely.py</string>
         <string>--all-profiles</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/richardhine/scripts/Octopus/homely</string>
+    <string>/Users/richardhine/Homely</string>
 
     <key>StartCalendarInterval</key>
     <dict>
@@ -27,10 +25,12 @@
     </dict>
 
     <key>StandardOutPath</key>
-    <string>/Users/richardhine/scripts/Octopus/homely/homely.log</string>
+    <string>/Users/richardhine/Homely/homely.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/richardhine/scripts/Octopus/homely/homely.err</string>
+    <string>/Users/richardhine/Homely/homely.err</string>
 
+    <key>RunAtLoad</key>
+    <false/>
 </dict>
 </plist>
