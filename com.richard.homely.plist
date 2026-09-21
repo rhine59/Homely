@@ -9,12 +9,12 @@
     <key>ProgramArguments</key>
     <array>
         <string>/Users/richardhine/.pyenv/versions/octopus/bin/python</string>
-        <string>/Users/richardhine/Homely/homely.py</string>
+        <string>/Users/richardhine/scripts/Homely/homely.py</string>
         <string>--all-profiles</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/richardhine/Homely</string>
+    <string>/Users/richardhine/scripts/Homely</string>
 
     <key>StartCalendarInterval</key>
     <dict>
@@ -25,10 +25,10 @@
     </dict>
 
     <key>StandardOutPath</key>
-    <string>/Users/richardhine/Homely/homely.log</string>
+    <string>/Users/richardhine/scripts/Homely/homely.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/richardhine/Homely/homely.err</string>
+    <string>/Users/richardhine/scripts/Homely/homely.err</string>
 
     <key>RunAtLoad</key>
     <false/>
