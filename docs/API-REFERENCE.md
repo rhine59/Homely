@@ -48,7 +48,7 @@ This is not a conventional browser redirect in the current implementation. The s
 ## Constants observed in the working implementation
 
 ```text
-client_id    = kh23jh
+client_id    = xxxxxx
 scope        = mobile
 redirect_uri = auth.homelyenergy://oauthredirect
 ```
@@ -84,7 +84,7 @@ User-Agent: Homely/190 CFNetwork/3860.700.1 Darwin/25.6.0
   "password": "<HOMELY_PASSWORD>",
   "params": {
     "response_type": "code",
-    "client_id": "kh23jh",
+    "client_id": "xxxxxx",
     "scope": "mobile",
     "state": "<random-state>",
     "redirect_uri": "auth.homelyenergy://oauthredirect",
@@ -138,7 +138,7 @@ Accept: */*
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=authorization_code&
-client_id=kh23jh&
+client_id=xxxxxx&
 code_verifier=<original-pkce-verifier>&
 code=<authorization-code>&
 redirect_uri=auth.homelyenergy://oauthredirect
