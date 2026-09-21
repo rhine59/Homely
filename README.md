@@ -10,6 +10,8 @@ The current production program is `homely.py`. It supports multiple household pr
 
 **[Installation and Configuration](docs/INSTALLATION.md)** — Python setup, `homely.env`, profile configuration, safe first tests, live operation, LaunchAgent installation and troubleshooting.
 
+**[API Reference](docs/API-REFERENCE.md)** — all Homely API calls discovered and used by the project, request examples, likely response structures, OAuth flow, customer methods, plus the Octopus Agile and Open-Meteo calls used by the scheduler.
+
 ## Main files
 
 - `homely.py` — current production scheduler.
