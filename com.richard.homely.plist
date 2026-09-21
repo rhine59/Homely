@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+<dict>
+
+    <key>Label</key>
+    <string>com.richard.homely</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/richardhine/.pyenv/versions/octopus/bin/python3</string>
+        <string>/Users/richardhine/scripts/Octopus/homely/homely.py</string>
+        <string>--all-profiles</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/richardhine/scripts/Octopus/homely</string>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>23</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/richardhine/scripts/Octopus/homely/homely.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/richardhine/scripts/Octopus/homely/homely.err</string>
+
+</dict>
+</plist>
