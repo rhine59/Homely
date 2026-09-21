@@ -1,0 +1,44 @@
+I have renamed the script to myenergy.py and it uses myenergy.env
+
+(octopus) richardhine@Mac homely % ./homely.py --help
+usage: homely.py [-h] [--profile PROFILE] [--all-profiles] [--env-file ENV_FILE] [--dry-run] [--today] [--auth-test] [--slots SLOTS]
+
+options:
+  -h, --help           show this help message and exit
+  --profile PROFILE    Profile name from home_agile.env; defaults to DEFAULT_PROFILE
+  --all-profiles       Run every profile found in home_agile.env
+  --env-file ENV_FILE  Config file path; default: home_agile.env beside this script
+  --dry-run            Show proposed change but do not write the DHW schedule
+  --today              Use today's Agile prices rather than tomorrow's
+  --auth-test          Test Homely login and dynamic discovery, then exit
+  --slots SLOTS        Override number of cheapest half-hour slots
+
+
+Useful combinations
+Safest first test:
+./homely_agile_dhw_v5_profiles.py --profile Richard --auth-test
+Simulate today's schedule:
+./homely_agile_dhw_v5_profiles.py --profile Richard --today --dry-run
+Simulate tomorrow's schedule:
+./homely_agile_dhw_v5_profiles.py --profile Richard --dry-run
+Simulate today using the cheapest six half-hour periods:
+./homely_agile_dhw_v5_profiles.py --profile Richard --today --slots 6 --dry-run
+Actually update today's Homely schedule:
+./homely_agile_dhw_v5_profiles.py --profile Richard --today
+Actually update tomorrow's Homely schedule:
+./homely_agile_dhw_v5_profiles.py --profile Richard
+If DEFAULT_PROFILE=Richard is set in home_agile.env, you can omit --profile Richard, so the normal unattended command is simply:
+./homely_agile_dhw_v5_profiles.py
+Precedence
+For the number of DHW half-hour slots, the script uses:
+--slots N
+    ↓ if absent
+Richard.AGILE_DHW_SLOTS
+    ↓ if absent
+AGILE_DHW_SLOTS
+    ↓ if absent
+4
+And for the profile:
+--profile Richard
+    ↓ if absent
+DEFAULT_PROFILE
