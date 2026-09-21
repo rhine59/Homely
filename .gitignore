@@ -5,3 +5,8 @@
 *.err
 __pycache__/
 .DS_Store
+*.key
+*key.txt
+*.sqlite3
+gitleaks-report.json
+publication-audit-report.txt
