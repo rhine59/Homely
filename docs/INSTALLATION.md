@@ -322,13 +322,13 @@ If the run fails with the specific message:
 No Agile prices available for <date>
 ```
 
-the wrapper assumes the next day's Octopus Agile prices have not yet been published. It waits **one hour** and automatically runs Homely again.
+the wrapper assumes the next day's Octopus Agile prices have not yet been published. It waits **one hour** and automatically runs Homely again. If Agile prices are still unavailable, it continues retrying at one-hour intervals until a run succeeds.
 
 Only this specific Agile-price-unavailable condition triggers the delayed retry. Authentication errors, configuration errors, Homely API failures and other exceptions are returned immediately rather than being blindly retried.
 
-The delayed run is attempted once. If Agile prices are still unavailable after the retry, the scheduled job exits with an error.
+There is no fixed retry limit for the Agile-price-unavailable condition: the wrapper continues at one-hour intervals until Homely completes successfully. Errors other than missing Agile prices still terminate the job immediately.
 
-The normal LaunchAgent start time remains 23:00. A price-publication failure therefore normally results in a second attempt at approximately 00:00.
+The normal LaunchAgent start time remains 23:00. A price-publication failure therefore results in attempts at approximately 00:00, 01:00, 02:00 and so on until a run succeeds.
 
 To install the current LaunchAgent configuration after pulling repository changes:
 
