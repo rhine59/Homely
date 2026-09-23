@@ -302,3 +302,46 @@ Before relying on unattended operation:
 - first scheduled run checked in logs and email.
 
 For the scheduling model and code architecture, see [Homely Python Implementation](HOMELY-PYTHON.md).
+
+
+## Automatic retry when Agile prices are unavailable
+
+The scheduled LaunchAgent runs `run-homely-scheduled.sh` rather than invoking `homely.py` directly.
+
+The wrapper runs:
+
+```text
+homely.py --all-profiles
+```
+
+If the run succeeds, it exits normally.
+
+If the run fails with the specific message:
+
+```text
+No Agile prices available for <date>
+```
+
+the wrapper assumes the next day's Octopus Agile prices have not yet been published. It waits **one hour** and automatically runs Homely again.
+
+Only this specific Agile-price-unavailable condition triggers the delayed retry. Authentication errors, configuration errors, Homely API failures and other exceptions are returned immediately rather than being blindly retried.
+
+The delayed run is attempted once. If Agile prices are still unavailable after the retry, the scheduled job exits with an error.
+
+The normal LaunchAgent start time remains 23:00. A price-publication failure therefore normally results in a second attempt at approximately 00:00.
+
+To install the current LaunchAgent configuration after pulling repository changes:
+
+```bash
+cd ~/scripts/Homely
+git pull
+chmod +x launchd_setup.sh run-homely-scheduled.sh
+./launchd_setup.sh
+```
+
+To test the wrapper manually:
+
+```bash
+cd ~/scripts/Homely
+./run-homely-scheduled.sh
+```
