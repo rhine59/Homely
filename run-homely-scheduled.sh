@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # run-homely-scheduled.sh
-# Retry once, one hour later, only when Octopus Agile prices are unavailable.
+# Retry every hour until successful when Octopus Agile prices are unavailable.
 #
 set -u
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -20,21 +20,22 @@ run_homely() {
     return "$rc"
 }
 
-run_homely
-rc=$?
+while true; do
+    run_homely
+    rc=$?
 
-if [[ $rc -eq 75 ]]; then
+    if [[ $rc -eq 0 ]]; then
+        exit 0
+    fi
+
+    if [[ $rc -ne 75 ]]; then
+        exit "$rc"
+    fi
+
     echo
     echo "Octopus Agile prices are not yet available."
     echo "Retrying Homely in one hour."
     sleep "$RETRY_DELAY"
     echo
     echo "Retrying Homely after one-hour delay..."
-    run_homely
-    rc=$?
-    if [[ $rc -eq 75 ]]; then
-        echo "ERROR: Octopus Agile prices are still unavailable after the one-hour retry." >&2
-        exit 1
-    fi
-fi
-exit "$rc"
+done
