@@ -8,9 +8,8 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/richardhine/.pyenv/versions/octopus/bin/python</string>
-        <string>/Users/richardhine/scripts/Homely/homely.py</string>
-        <string>--all-profiles</string>
+        <string>/bin/bash</string>
+        <string>/Users/richardhine/scripts/Homely/run-homely-scheduled.sh</string>
     </array>
 
     <key>WorkingDirectory</key>
